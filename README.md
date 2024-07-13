@@ -36,3 +36,10 @@ getOne(@Param('id') movieId: string) {
 return `This will return on movie with the id: ${movieId}`;
 }
 ```
+
+4. json 을 리턴하고 싶다면 그냥 Json 타입을 리턴하면 된다
+   1. express 에서는 JSON.parse 이런 식으로 json 으로 파싱해야 하는데, nest 는 알아서 해줌
+5. :id 이런 다이나믹 라우팅이랑 정적 라우팅이랑 겹치면 무조건 :id 로 갈 수가 있음
+   1. 예) :id 와 /search 가 같이 있으면 /search 로 접근할 경우 id 가 search 인 것으로 판단해 버림
+   2. 이럴 땐 search 메소드를 :id 보다 위에서 선언해 주면 됨
+      1. 약간 React Route 랑 비슷한 것 같음.
