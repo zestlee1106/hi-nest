@@ -19,3 +19,20 @@
 
 - 실제 비즈니스 로직이 있는 곳이다
 - DB 호출 등의 로직은 이 곳에 있어야 한다
+
+### 참고
+
+1. 컨트롤러를 사용할 땐 nest cli 를 사용하는 것이 편하다
+   1. 예) nest generate controller
+2. 컨트롤러를 만들면 해당 경로가 엔드포인트로 된다
+   1. 예) movies 컨트롤러 >> /movies 엔드포인트로 시작
+3. 뭔가 필요하다면 요청을 하면 된다
+   1. 예) 파라미터가 필요하다면 @Param 으로 요청하면 됨  
+
+```ts
+@Get('/:id')
+// 이런 식으로 @Param 을 써서 id 파라미터를 요청한 다음 받아올 변수로 받아오면 된다
+getOne(@Param('id') movieId: string) {
+return `This will return on movie with the id: ${movieId}`;
+}
+```
