@@ -79,6 +79,8 @@ return `This will return on movie with the id: ${movieId}`;
 6. 컨트롤러에서는 서비스 의존성을 주입 받는다
    1. 왜냐하면 서비스 로직을 분리시키기 위해서
    2. 주입을 받고 서비스 로직의 메서드들을 사용할 수 있게끔 한다
+7. 웬만해서 express 의 기능인 @Req, @Res 를 사용하지 않는 편이 좋다
+   1. 왜냐하면 express 에 디펜던시를 두지 않아야 추후에 fastify 등의 좋은 라이브러리로 바꾸기 편해지기 때문에
 
 ## 번외
 
