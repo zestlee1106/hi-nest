@@ -37,6 +37,22 @@
   - forbidNonWhitelisted: whitelist에 없는 필드가 Body로 들어왔을 경우 에러를 발생시킨다.
   - transform: 요청에서 받은 데이터를 DTO에 명시된 타입으로 자동 변환해준다 (예: 쿼리 스트링으로 받은 값을 string에서 number로 변환).
 
+## 모듈이란
+
+- nest 는 여러개의 모듈로 이루어져있다.
+- App 은 루트 경로에 뭔가를 해야 할 때 사용한다. (controller 에서 '/' 라우트를 지정할 수 있음)
+- 모듈에서 provider 에 service 를 넣어줘야 controller 에서 해당 service 를 사용할 수 있게 된다.  
+nest 에서 알아서 전부 import 를 해 준다고 보면 된다.
+- 예를 들어서 원래라면
+
+```ts
+const service = new MovieService()
+const controller = new MovieController(service)
+```
+
+- 이런 식으로 수동으로 서비스 인스턴스를 만들고 컨트롤러에 주입해야 하는데,  
+module 이라는 컨테이너를 만들고 각각을 controller, providers 에 등록해 주면 nest 에서 알아서 의존성 주입을 해 준다
+
 ### 참고
 
 1. 컨트롤러를 사용할 땐 nest cli 를 사용하는 것이 편하다
